@@ -1,0 +1,42 @@
+APP := mk61_nspire
+THIS_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+BUILD_DIR := $(THIS_DIR)/build_ndless
+
+NDLESS_HOME ?= /opt/ndless
+CXX ?= nspire-g++
+MAKETNS ?= maketns
+
+CPPFLAGS := -I$(NDLESS_HOME)/include
+CXXFLAGS := -std=gnu++17 -Os -Wall -Wextra -DNSPIRE_NDLESS
+LDFLAGS := -L$(NDLESS_HOME)/lib
+LDLIBS := -lndls -lnio -lm
+
+OBJS := $(BUILD_DIR)/mk61_engine.o $(BUILD_DIR)/mk61_nspire_ndless.o $(BUILD_DIR)/mk61_hls.o
+ELF := $(BUILD_DIR)/$(APP).elf
+TNS := $(BUILD_DIR)/$(APP).tns
+
+.PHONY: all clean
+
+all: $(TNS)
+	@echo "[OK] built: $(TNS)"
+
+$(BUILD_DIR):
+	@mkdir -p "$(BUILD_DIR)"
+
+$(BUILD_DIR)/mk61_engine.o: $(THIS_DIR)/mk61_engine.cpp | $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c "$<" -o "$@"
+
+$(BUILD_DIR)/mk61_nspire_ndless.o: $(THIS_DIR)/mk61_nspire_ndless.cpp | $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c "$<" -o "$@"
+
+$(BUILD_DIR)/mk61_hls.o: $(THIS_DIR)/../hls/mk61_hls.cpp | $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c "$<" -o "$@"
+
+$(ELF): $(OBJS)
+	$(CXX) $(OBJS) $(LDFLAGS) $(LDLIBS) -o "$@"
+
+$(TNS): $(ELF)
+	$(MAKETNS) "$<" "$@"
+
+clean:
+	rm -rf "$(BUILD_DIR)"

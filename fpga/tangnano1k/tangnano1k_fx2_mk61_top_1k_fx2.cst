@@ -1,0 +1,60 @@
+# Tang Nano 1K profile for FX2LP bridge mode
+# Top: mk61_top_1k_fx2
+#
+# This profile extends the external 1K top with one extra status output:
+#   scan_active = (command[23:18] == 0), used by FX2 firmware for robust
+#   emu145-compatible keypad scan timing.
+#
+# Verify pinout against your board revision before wiring.
+
+IO_LOC  "clk" 47;
+IO_PORT "clk" IO_TYPE=LVCMOS33;
+
+IO_LOC  "rst" 40;
+IO_PORT "rst" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "k1" 41;
+IO_PORT "k1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "k2" 38;
+IO_PORT "k2" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "mode[0]" 39;
+IO_PORT "mode[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "mode[1]" 42;
+IO_PORT "mode[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "dcycle[0]" 15;
+IO_PORT "dcycle[0]" IO_TYPE=LVCMOS33;
+IO_LOC  "dcycle[1]" 16;
+IO_PORT "dcycle[1]" IO_TYPE=LVCMOS33;
+IO_LOC  "dcycle[2]" 17;
+IO_PORT "dcycle[2]" IO_TYPE=LVCMOS33;
+IO_LOC  "dcycle[3]" 18;
+IO_PORT "dcycle[3]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "syncout" 19;
+IO_PORT "syncout" IO_TYPE=LVCMOS33;
+
+IO_LOC  "segment[0]" 20;
+IO_PORT "segment[0]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[1]" 22;
+IO_PORT "segment[1]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[2]" 23;
+IO_PORT "segment[2]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[3]" 24;
+IO_PORT "segment[3]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[4]" 27;
+IO_PORT "segment[4]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[5]" 28;
+IO_PORT "segment[5]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[6]" 29;
+IO_PORT "segment[6]" IO_TYPE=LVCMOS33;
+IO_LOC  "segment[7]" 30;
+IO_PORT "segment[7]" IO_TYPE=LVCMOS33;
+
+# Additional status line for FX2-side keypad scan gating.
+# Pin 44 is used by default; if your board/wiring differs, override with --cst.
+IO_LOC  "scan_active" 44;
+IO_PORT "scan_active" IO_TYPE=LVCMOS33;

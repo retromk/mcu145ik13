@@ -1,0 +1,58 @@
+# Tang Nano 1K constraints template for mk61_top.
+# Device: GW1NZ-LV1QN48C6/I5
+#
+# Update pin numbers to your exact board revision/wiring.
+#
+# Syntax reference:
+#   IO_LOC  "port_name" <pin_number>;
+#   IO_PORT "port_name" IO_TYPE=LVCMOS33 [PULL_MODE=UP|DOWN|NONE];
+#
+# Example (uncomment after verifying pins from Tang Nano 1K docs):
+# IO_LOC  "clk"  <PIN>;
+# IO_PORT "clk" IO_TYPE=LVCMOS33;
+#
+# IO_LOC  "rst"  <PIN>;
+# IO_PORT "rst" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+#
+# IO_LOC  "k1"   <PIN>;
+# IO_PORT "k1" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+#
+# IO_LOC  "k2"   <PIN>;
+# IO_PORT "k2" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+#
+# mode[1:0]
+# IO_LOC  "mode[0]" <PIN>;
+# IO_PORT "mode[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+# IO_LOC  "mode[1]" <PIN>;
+# IO_PORT "mode[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+#
+# dcycle[3:0]
+# IO_LOC  "dcycle[0]" <PIN>;
+# IO_PORT "dcycle[0]" IO_TYPE=LVCMOS33;
+# IO_LOC  "dcycle[1]" <PIN>;
+# IO_PORT "dcycle[1]" IO_TYPE=LVCMOS33;
+# IO_LOC  "dcycle[2]" <PIN>;
+# IO_PORT "dcycle[2]" IO_TYPE=LVCMOS33;
+# IO_LOC  "dcycle[3]" <PIN>;
+# IO_PORT "dcycle[3]" IO_TYPE=LVCMOS33;
+#
+# IO_LOC  "syncout" <PIN>;
+# IO_PORT "syncout" IO_TYPE=LVCMOS33;
+#
+# segment[7:0]
+# IO_LOC  "segment[0]" <PIN>;
+# IO_PORT "segment[0]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[1]" <PIN>;
+# IO_PORT "segment[1]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[2]" <PIN>;
+# IO_PORT "segment[2]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[3]" <PIN>;
+# IO_PORT "segment[3]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[4]" <PIN>;
+# IO_PORT "segment[4]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[5]" <PIN>;
+# IO_PORT "segment[5]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[6]" <PIN>;
+# IO_PORT "segment[6]" IO_TYPE=LVCMOS33;
+# IO_LOC  "segment[7]" <PIN>;
+# IO_PORT "segment[7]" IO_TYPE=LVCMOS33;

@@ -1,0 +1,20 @@
+# Tang Nano 1K (GW1NZ-LV1QN48C6/I5) onboard mapping
+# Top: mk61_top_1k_board
+#
+# Source (Tang Nano 1K schematic, "Tang nano 6100", 2021-10-28):
+# https://iot-kmutnb.github.io/blogs/fpga/tang_nano_boards/tang_nano_1k_schematic.pdf
+
+IO_LOC  "CLK" 47;
+IO_PORT "CLK" IO_TYPE=LVCMOS33;
+
+IO_LOC  "KEY_A_N" 13;
+IO_PORT "KEY_A_N" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC  "LED_R_N" 9;
+IO_PORT "LED_R_N" IO_TYPE=LVCMOS33;
+
+IO_LOC  "LED_G_N" 11;
+IO_PORT "LED_G_N" IO_TYPE=LVCMOS33;
+
+IO_LOC  "LED_B_N" 10;
+IO_PORT "LED_B_N" IO_TYPE=LVCMOS33;
