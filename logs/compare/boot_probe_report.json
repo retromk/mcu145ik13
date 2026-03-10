@@ -1,0 +1,95 @@
+{
+  "scenario": "boot_probe",
+  "description": "Single key after init",
+  "offset": 0,
+  "rtl_frames": 309,
+  "emu_frames": 309,
+  "frame_cmp": {
+    "total": 309,
+    "match": 309,
+    "ratio": 1.0,
+    "mismatches": []
+  },
+  "event_cmp": {
+    "total": 1,
+    "same": 1,
+    "ratio": 1.0,
+    "diffs": []
+  },
+  "rtl_event_effects": [
+    {
+      "key": "B_1_3",
+      "event_cycle": 100000,
+      "base_cycle": 99949,
+      "base_text": "  0.                    ",
+      "base_display": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        128,
+        15,
+        15,
+        15,
+        15
+      ],
+      "change_cycle": 100789,
+      "change_text": "  0                    ",
+      "change_display": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        0,
+        15,
+        15,
+        15,
+        15
+      ]
+    }
+  ],
+  "emu_event_effects": [
+    {
+      "key": "B_1_3",
+      "event_cycle": 100000,
+      "base_cycle": 99950,
+      "base_text": " 0.          ",
+      "base_display": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        128,
+        15,
+        15,
+        15,
+        15
+      ],
+      "change_cycle": 100790,
+      "change_text": " 0          ",
+      "change_display": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        0,
+        15,
+        15,
+        15,
+        15
+      ]
+    }
+  ]
+}
